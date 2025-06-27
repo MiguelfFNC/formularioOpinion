@@ -1,11 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Encuesta de Opinión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1> Hola sale Sexaso</h1>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="card shadow p-4">
+            <h1 class="text-center mb-4">Encuesta de Opinión</h1>
+
+            <form id="Form-Opinion" class="row g-3">
+                <div class="col-12">
+                    <label class="form-label">¿Cómo califica nuestro servicio?</label>
+                    <select name="Evaluacion" class="form-select" required>
+                        <option value="">-- Seleccione --</option>
+                        <option value="Excelente">Excelente</option>
+                        <option value="Bueno">Bueno</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Malo">Malo</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label d-block mb-2">¿Volvería a usar nuestros servicios?</label>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" value="Sí" class="form-check-input" name="registra" required>
+                        <label class="form-check-label" for="DevolverSi">Sí</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" value="No" class="form-check-input" name="registra" required>
+                        <label class="form-check-label" for="DevolverNo">No</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Comentarios adicionales:</label>
+                    <textarea class="form-control" name="comentario" rows="4" placeholder="Escribe aquí tu opinión..."
+                        required></textarea>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="bi bi-send"></i> Enviar Opinión
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="card shadow mt-5 p-4">
+            <h2 class="text-center mb-3">Opiniones Recolectadas</h2>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle text-center" id="Tabla">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Calificación</th>
+                            <th>Volvería</th>
+                            <th>Comentario</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Tabla-Cuerpo"></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <script src="opinion.js"></script>
 </body>
+
 </html>
